@@ -11,9 +11,7 @@ public class Main {
 		String titolo;
 		int anno;
 		int mese;
-		int giorno;
-		//messo data now() perchè dice che la data protrebbe non essere inizializzata per via delle eccezioni
-		//anche se c'è un ciclio while che se si verifica eccezione mi fa riscrivere la data
+		int giorno;		
 		LocalDate data = LocalDate.now(); 
 		int numPostiEvento;
 		boolean isPrenotazione;
