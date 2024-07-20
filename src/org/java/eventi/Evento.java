@@ -19,20 +19,23 @@ public class Evento {
 	}
 	
 	private void setPosti(int numPostiTotali) {
-		if (numPostiTotali > 0) {
+		try {
+			if (numPostiTotali < 0)
+				throw new IllegalArgumentException("numero posti totali negativo");
 			this.numPostiTotali = numPostiTotali;
-		} else {
-			System.out.println(" hai inserito un numero negativo nel numero posti totale evento o zero \n");			
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 	
-	
 	public void setData(LocalDate data) {
 		LocalDate dataAttuale = LocalDate.now();
-		if (dataAttuale.isBefore(data)) {
+		try {
+			if (dataAttuale.isAfter(data))
+				throw new IllegalArgumentException("la data è prima della data attuale");
 			this.data = data;
-		} else {
-			System.out.println("data già passata mi spiace");
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 

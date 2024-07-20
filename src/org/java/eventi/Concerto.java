@@ -30,10 +30,12 @@ public class Concerto extends Evento{
 	}
 
 	public void setPrezzo(double prezzo) {
-		if (prezzo > 0) {
+		try {
+			if (prezzo < 0)
+				throw new IllegalArgumentException("il prezzo non può essere negativo");
 			this.prezzo = prezzo;
-		} else {
-			System.out.println("prezzo negativo non va bene, risetta il prezzo");
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 	
