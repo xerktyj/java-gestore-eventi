@@ -62,15 +62,15 @@ public class Main {
 					throw new Exception ("Eccezione: i giorni di un mese sono 31");
 				//metto qua cosi non mi carica la data se va un'eccezione e non mi da errore
 				data = LocalDate.of(anno, mese, giorno);
+				System.out.println("vuoi impostare un altra data, true o false ?");
+				isEccezione = in.nextBoolean();
 				
 				}catch(Exception parametriData){
 					System.out.println(parametriData.getMessage());
 					System.out.println("riscrivi la data");
 					isEccezione = true;
-				}	
+				}		
 			
-			System.out.println("vuoi impostare un altra data, true o false ?");
-			isEccezione = in.nextBoolean();
 								
 		} while (isEccezione);
 		in.nextLine();
