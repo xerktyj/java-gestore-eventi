@@ -1,2 +1,2 @@
 # java-gestore-eventi
-progetto da fare senza eccezzioni
+progetto da fare senza eccezioni
